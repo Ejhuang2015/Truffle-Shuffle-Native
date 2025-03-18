@@ -59,7 +59,8 @@ const _Layout = () => {
           overflow: 'hidden',
           borderWidth: 1,
           borderColor: '#280202'
-        }
+        },
+        tabBarHideOnKeyboard: true
       }}
     >
       <Tabs.Screen

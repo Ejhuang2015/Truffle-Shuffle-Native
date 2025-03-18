@@ -58,6 +58,7 @@ export default function Index() {
             <SearchBar
               onPress={() => router.push("/search")}
               placeholder="Search for a movie or drink"
+              value=""
             />
 
             <>

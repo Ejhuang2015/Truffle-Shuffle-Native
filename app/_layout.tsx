@@ -5,9 +5,6 @@ import { StatusBar } from "react-native";
 export default function RootLayout() {
   return (
       <Stack>
-        <StatusBar
-          backgroundColor={"#123"}
-        />
         <Stack.Screen
           name="(tabs)"
           options={{
