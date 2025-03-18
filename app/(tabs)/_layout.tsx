@@ -17,7 +17,7 @@ const TabIcon = ({focused, icon, title}: any) => {
           className="size-5"
         />
         <Text
-          className='text-secondary text-base font-semibold ml-2 text-primaryDark'
+          className='font-semibold ml-2 text-primaryDark'
         >
           {title}
         </Text>
