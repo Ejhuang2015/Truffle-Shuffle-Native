@@ -128,7 +128,7 @@ const Search = () => {
                             className='mt-10 px-5'
                         >
                             <Text
-                                className='text-center text-gray-500'
+                                className='text-center text-secondaryDark'
                             >
                                 {searchQuery.trim() ? 'No movies found' : 'Search for a movie'}
                             </Text>
