@@ -49,11 +49,22 @@ export const updateSearchCount = async (query: string, movie: Movie) => {
 export const getTrendingMovies = async (): Promise<TrendingMovie[] | undefined> => {
     try {
         const result = await database.listDocuments(DATABASE_ID, COLLECTION_ID, [
-            Query.limit(5),
+            Query.limit(20),
             Query.orderDesc('count')
         ])
 
-        return result.documents as unknown as TrendingMovie[];
+        let filteredResult = Array.from(result.documents.filter((obj, pos, arr) => {
+            return arr.map(mapObj => mapObj["movie_id"]).indexOf(obj["movie_id"]) === pos;
+        }))
+
+        let sliceCnt : number = 5
+        if (filteredResult.length < 5) {
+            sliceCnt = filteredResult.length;
+        }
+
+        return filteredResult.slice(0, sliceCnt) as unknown as TrendingMovie[];
+
+        // return result.documents as unknown as TrendingMovie[];
     } catch (error) {
         console.log(error);
         return undefined;

@@ -9,7 +9,7 @@ const TrendingCard = ({ movie: { movie_id , title, poster_url}, index }: Trendin
         href={`/movies/${movie_id}`} asChild
     >
         <TouchableOpacity
-            className='w-32 relative pl-5'
+            className='w-32 relative ml-5'
         >
             <Image
                 source={{ uri: poster_url}}
@@ -17,7 +17,7 @@ const TrendingCard = ({ movie: { movie_id , title, poster_url}, index }: Trendin
                 resizeMode="cover"
             />
             <View
-                className='absolute bottom-9 -left-2.5 px-2 rounded-full'
+                className='absolute bottom-5 -left-10 px-2 rounded-full'
             >
                 <MaskedView
                     maskElement={
